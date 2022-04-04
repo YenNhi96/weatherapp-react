@@ -19,13 +19,13 @@ ul {
   padding: 0;
 }
 
-.App .Temperature {
+.Temperature {
   font-size: 64px;
   line-height: 1;
   font-weight: 400;
 }
 
-.App .units {
+.units {
   position: relative;
   font-size: 16px;
   top: -34px;
@@ -33,4 +33,12 @@ ul {
 
 .App a {
   text-decoration: none;
+}
+
+.footer {
+  margin-left: 350px;
+}
+
+.App img {
+  width: 130px;
 }
