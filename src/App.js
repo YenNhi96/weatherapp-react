@@ -3,7 +3,7 @@ import axios from "axios";
 import "./App.css";
 
 function App() {
-  const [city, setCity] = useState("Hanoi");
+  const [city, setCity] = useState("");
   const [search, setSearch] = useState(false);
   const [weatherData, setWeatherData] = useState({});
 
@@ -22,7 +22,7 @@ function App() {
   function handleSubmit(event) {
     event.preventDefault();
     setSearch(true);
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=d800d7a77d154e7030aa4c43d236a01f&units=metric`;
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=2ca45acfa2cd336ecb357fa95ae349ac&units=metric`;
     axios.get(url).then(changeData);
   }
 
@@ -31,7 +31,7 @@ function App() {
   }
 
   function defaultCity(city1) {
-    let urlDefault = `https://api.openweathermap.org/data/2.5/weather?q=${city1}&appid=d800d7a77d154e7030aa4c43d236a01f&units=metric`;
+    let urlDefault = `https://api.openweathermap.org/data/2.5/weather?q=${city1}&appid=2ca45acfa2cd336ecb357fa95ae349ac&units=metric`;
     axios.get(urlDefault).then(changeData);
   }
 
