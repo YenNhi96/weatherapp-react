@@ -8,7 +8,7 @@ function Weather() {
 
   useEffect(() => {
     function defaultCity(city1) {
-      let urlDefault = `https://api.openweathermap.org/data/2.5/weather?q=${city1}&appid=2ca45acfa2cd336ecb357fa95ae349ac&units=metric`;
+      let urlDefault = `https://api.openweathermap.org/data/2.5/weather?q=${city1}&appid=96d9f7babe4d6523a7a489c7350b36fc&units=metric`;
       axios.get(urlDefault).then(changeData);
     }
 
@@ -30,7 +30,7 @@ function Weather() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=2ca45acfa2cd336ecb357fa95ae349ac&units=metric`;
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=96d9f7babe4d6523a7a489c7350b36fc&units=metric`;
     axios.get(url).then(changeData);
   }
 
