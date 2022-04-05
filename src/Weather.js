@@ -7,7 +7,12 @@ function Weather() {
   const [weatherData, setWeatherData] = useState({});
 
   useEffect(() => {
-    defaultCity();
+    function defaultCity(city1) {
+      let urlDefault = `https://api.openweathermap.org/data/2.5/weather?q=${city1}&appid=2ca45acfa2cd336ecb357fa95ae349ac&units=metric`;
+      axios.get(urlDefault).then(changeData);
+    }
+
+    defaultCity("Hanoi");
     //handle Weather function after first render
   }, []);
 
@@ -31,11 +36,6 @@ function Weather() {
 
   function changeCity(event) {
     setCity(event.target.value);
-  }
-
-  function defaultCity() {
-    let urlDefault = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=2ca45acfa2cd336ecb357fa95ae349ac&units=metric`;
-    axios.get(urlDefault).then(changeData);
   }
 
   return (
