@@ -1,6 +1,7 @@
 .Weather {
   display: block;
-  margin: 30px 250px;
+  margin: 30px auto;
+  max-width: 800px;
   padding: 30px;
   border: solid 1px rgb(204, 204, 204);
   border-radius: 12px;
