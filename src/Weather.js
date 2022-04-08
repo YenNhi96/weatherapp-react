@@ -18,7 +18,7 @@ function Weather() {
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
 
-    console.log(response.data.dt);
+    console.log(new Date(response.data.dt * 1000));
   }
 
   useEffect(() => {
