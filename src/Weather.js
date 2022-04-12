@@ -10,15 +10,13 @@ function Weather() {
   function changeData(response) {
     setWeatherData({
       city: response.data.name,
-      date: new Date(response.data.dt * 1000),
+      date: response.data.dt * 1000,
       temperature: Math.round(response.data.main.temp),
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
-
-    console.log(new Date(response.data.dt * 1000));
   }
 
   useEffect(() => {
@@ -67,7 +65,7 @@ function Weather() {
         <h1>{weatherData.city}</h1>
         <ul>
           <li>
-            <FormatDate date={weatherData.date} />
+            <FormatDate dateString={weatherData.date} />
           </li>
           <li className="text-capitalize">{weatherData.description}</li>
         </ul>
@@ -88,7 +86,7 @@ function Weather() {
             </span>
           </div>
         </div>
-        <div className="col-5">
+        <div className="col-5 mt-1">
           <ul>
             <li>Humidity: {weatherData.humidity}%</li>
             <li>Wind: {weatherData.wind} km/h</li>
