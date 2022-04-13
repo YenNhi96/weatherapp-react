@@ -9,7 +9,7 @@ export default function WeatherIcon(props) {
   let dateData = new Date(props.dateInfo);
   let hours = dateData.getHours();
 
-  if (hours <= 17) {
+  if (hours <= 16) {
     return (
       <div className="weather-icon">
         <Day fill="black" stroke="grey" />
@@ -17,7 +17,7 @@ export default function WeatherIcon(props) {
     );
   }
 
-  if (hours > 17) {
+  if (hours > 16) {
     return (
       <div className="weather-icon">
         <Night fill="black" stroke="grey" />
