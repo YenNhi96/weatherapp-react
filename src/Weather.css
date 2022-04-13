@@ -39,3 +39,8 @@ ul {
 .Weather img {
   width: 100px;
 }
+
+.weather-icon {
+  width: 100px;
+  margin-left: 15px;
+}

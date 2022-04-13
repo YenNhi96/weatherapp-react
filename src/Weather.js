@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import FormatDate from "./FormatDate";
 import "./Weather.css";
+import WeatherIcon from "./WeatherIcon";
 
 function Weather() {
   const [city, setCity] = useState("Hanoi");
@@ -14,8 +15,8 @@ function Weather() {
       temperature: Math.round(response.data.main.temp),
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
-      wind: response.data.wind.speed,
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      wind: Math.round(response.data.wind.speed),
+      iconid: response.data.weather[0].id,
     });
   }
 
@@ -73,11 +74,12 @@ function Weather() {
       <div className="row">
         <div className="col-7">
           <div className="d-flex align-end">
-            <img
-              src={weatherData.icon}
-              alt={weatherData.description}
-              className="float-left"
-            />
+            <div className="float-left">
+              <WeatherIcon
+                data={weatherData.iconid}
+                dateString={weatherData.date}
+              />
+            </div>
             <span className="mh-100">
               <strong className="Temperature">{weatherData.temperature}</strong>
               <span className="units">
