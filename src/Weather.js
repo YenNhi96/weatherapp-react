@@ -77,7 +77,7 @@ function Weather() {
             <div className="float-left">
               <WeatherIcon
                 data={weatherData.iconid}
-                dateString={weatherData.date}
+                dateInfo={weatherData.date}
               />
             </div>
             <span className="mh-100">
