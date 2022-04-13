@@ -3,6 +3,7 @@ import axios from "axios";
 import FormatDate from "./FormatDate";
 import "./Weather.css";
 import WeatherIcon from "./WeatherIcon";
+import Temperature from "./Temperature";
 
 function Weather() {
   const [city, setCity] = useState("Hanoi");
@@ -81,10 +82,7 @@ function Weather() {
               />
             </div>
             <span className="mh-100">
-              <strong className="Temperature">{weatherData.temperature}</strong>
-              <span className="units">
-                <a href="/">°C</a> | <a href="/">°F</a>
-              </span>
+              <Temperature temp={weatherData.temperature} />
             </span>
           </div>
         </div>
