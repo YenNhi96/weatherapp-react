@@ -40,8 +40,12 @@ ul {
   width: 100px;
 }
 
-.weather-icon {
+.Forecast {
+  text-align: center;
+  align-items: center;
+}
+
+.ForecastIcon {
   width: 100px;
-  margin-left: 20px;
-  margin-right: 5px;
+  margin: 0 auto;
 }
