@@ -19,20 +19,11 @@ function Weather() {
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       wind: Math.round(response.data.wind.speed),
+      visibility: response.data.visibility / 1000,
       icon: response.data.weather[0].icon,
       coordinates: response.data.coord,
     });
   }
-
-  // useEffect(() => {
-  //   function defaultCity(city1) {
-  //     let urlDefault = `https://api.openweathermap.org/data/2.5/weather?q=${city1}&appid=4884059c1a2f6653c04d553890063a37&units=metric`;
-  //     axios.get(urlDefault).then(changeData);
-  //   }
-
-  //   defaultCity("Paris");
-  //   //handle Weather function after first render
-  // }, []);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -95,6 +86,7 @@ function Weather() {
             <ul>
               <li>Humidity: {weatherData.humidity}%</li>
               <li>Wind: {weatherData.wind} km/h</li>
+              <li>Visibility: {weatherData.visibility} km</li>
             </ul>
           </div>
         </div>
